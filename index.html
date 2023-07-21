@@ -83,7 +83,7 @@ var emojis = ["\uD83D\uDE0D", "\uD83D\uDE18", "\uD83D\uDE0A", "\uD83D\uDE01", "\
 "\U0001F9EA",
 "\u2708","\ud83c\udde8\ud83c\udde6","\ud83c\udde9\ud83c\uddea","\ud83c\uddea\ud83c\uddec","\ud83c\uddeb\ud83c\uddef","\ud83c\uddec\ud83c\udde7","\ud83c\udded\ud83c\uffe9","\ud83c\uddee\ud83c\uffe9","\u26a1","\u2604","\u2601","\u2600","\u2744","\u26bd","\u26be","\u26f3","\u2705",
 "\U0001F308","\U0001F49A","\U0001F49B","\U0001F49C","\U0001F49D","\U0001F49E","\U0001F49F",
-"\U0001F4F7","\U0001F4F8","\U0001F4F9","\U0001F4FA"];
+"📷","🎥","📹","📺"];
 
         // 定义随机获取emoji表情的函数
         function randomEmoji() {
@@ -136,7 +136,7 @@ function convertFormat() {
                     outputText += emojis[Math.floor(Math.random() * 6) + 76] + sentences[i] + "。" + randomEmoji();
                 }
                 else if (sentences[i].includes("工具") || sentences[i].includes("DIY")) {
-                    outputText += emojis[Math.floor(Math.random() * 6) + 82] + sentences[i] + "。" + randomEmoji();
+           outputText += emojis[Math.floor(Math.random() * 6) + 82] + sentences[i] + "。" + randomEmoji();
                 }
                 else if (sentences[i].includes("科技") || sentences[i].includes("数码")) {
                     outputText += emojis[Math.floor(Math.random() * 9) + 88] + sentences[i] + "。" + randomEmoji();
@@ -148,7 +148,7 @@ function convertFormat() {
                     outputText += "\U0001F308" + sentences[i] + "。" + randomEmoji();
                 }
                 else if (sentences[i].includes("相机") || sentences[i].includes("摄影")) {
-                    outputText += "\U0001F4F7" + sentences[i] + "。" + randomEmoji();
+                    outputText += "📷" + sentences[i] + "。" + randomEmoji();
                 }
                 else {
                     outputText += sentences[i] + "。";
@@ -164,7 +164,7 @@ function convertFormat() {
         // 定义复制文本的函数
         function copyText() {
             // 获取输出文本
-  var outputText = outputBox.value;
+            var outputText = outputBox.value;
             // 判断输出文本是否为空
             if (outputText == "") {
                 alert("请先转换格式再复制");
@@ -185,3 +185,4 @@ function convertFormat() {
         copyButton.addEventListener("click", copyText);
     </script>
 </html>
+
