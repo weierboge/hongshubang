@@ -1,0 +1,187 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f44336;
+        }
+
+        .input-box, .output-box {
+            width: 100%;
+            height: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+
+        .button {
+            display: block;
+            width: 100px;
+            height: 40px;
+            margin: 20px auto;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #e53935;
+        }
+
+        .copy-button {
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            margin-left: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .copy-button:hover {
+            background-color: #43a047;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝小红书模板格式文本转换工具🛠</h1>
+        <textarea class="input-box" id="input-box" placeholder="请输入你想要转换的文字内容"></textarea>
+        <button class="button" id="convert-button">🔄转换格式👌</button>
+        <textarea class="output-box" id="output-box" placeholder="输出结果文本" readonly></textarea>
+        <button class="copy-button" id="copy-button">📋一键复制✔</button>
+    </div>
+    <script>
+        // 获取元素
+        var inputBox = document.getElementById("input-box");
+        var outputBox = document.getElementById("output-box");
+        var convertButton = document.getElementById("convert-button");
+        var copyButton = document.getElementById("copy-button");
+
+   // 定义emoji表情数组
+var emojis = ["\uD83D\uDE0D", "\uD83D\uDE18", "\uD83D\uDE0A", "\uD83D\uDE01", "\uD83D\uDE02", "\uD83E\uDD23", "\uD83D\uDE06", "\uD83D\uDE05", "\uD83E\uDD70", "\uD83E\uDD29", "\uD83E\uDD2A", "\uD83E\uDD2D", "\uD83E\uDD28", "\uD83D\uDE0E", "\uD83E\uDD11", "\uD83E\uDD13", "\uD83E\uDD17", "\uD83D\uDE09", "\uD83D\uDE0F", "\uD83D\uDE10", "\uD83D\uDE12", "\uD83D\uDE11",
+"\u2764","💋","💍","💎","💐","🌹","🌺","🌻","🌼",
+"\U0001F9F8","👗","👠","💄","👒","👜","🕶",
+"\U0001F9F1","🔧","🔨","⚒️","⛏️","⚙️",
+"\U0001F9EE","💻","🖥️","🖱️","⌨️",
+"\U0001F9ED","📱","☎️","📞",
+"\U0001F9EC","⌚️","⏰",
+"\U0001F9EB","💡",
+"\U0001F9EA",
+"\u2708","\ud83c\udde8\ud83c\udde6","\ud83c\udde9\ud83c\uddea","\ud83c\uddea\ud83c\uddec","\ud83c\uddeb\ud83c\uddef","\ud83c\uddec\ud83c\udde7","\ud83c\udded\ud83c\uffe9","\ud83c\uddee\ud83c\uffe9","\u26a1","\u2604","\u2601","\u2600","\u2744","\u26bd","\u26be","\u26f3","\u2705",
+"\U0001F308","\U0001F49A","\U0001F49B","\U0001F49C","\U0001F49D","\U0001F49E","\U0001F49F",
+"\U0001F4F7","\U0001F4F8","\U0001F4F9","\U0001F4FA"];
+
+        // 定义随机获取emoji表情的函数
+        function randomEmoji() {
+            var index = Math.floor(Math.random() * emojis.length);
+            return emojis[index];
+        }
+
+       // 定义转换格式的函数
+function convertFormat() {
+    // 获取输入文本
+    var inputText = inputBox.value;
+    // 判断输入文本是否为空
+    if (inputText == "") {
+        alert("请输入你想要转换的文字内容");
+    }
+    // 定义输出文本
+    var outputText = "";
+    
+    // 定义数字序号的正则表达式
+    var numberPattern = /^\d+\./;
+    // 定义小标题的正则表达式
+    var titlePattern = /^\d+[。，、]/;
+    
+    // 在每一句话后面添加emoji表情
+    var sentences = inputText.split("。");
+    for (var i = 0; i < sentences.length; i++) {
+        if (sentences[i] != "") {
+            // 判断是否是数字序号
+            if (numberPattern.test(sentences[i])) {
+                // 在数字序号前面添加对应的emoji表情
+                var number = sentences[i].match(numberPattern)[0];
+                outputText += emojis[parseInt(number) - 1] + sentences[i] + "。";
+            }
+            // 判断是否是小标题
+            else if (titlePattern.test(sentences[i])) {
+                // 在小标题前面添加对应的emoji表情
+                var title = sentences[i].match(titlePattern)[0];
+                outputText += emojis[Math.floor(Math.random() * 10) + 35] + title + "。";
+            }
+            // 其他情况
+            else {
+                // 根据段落和文字含义适当添加表情
+                if (sentences[i].includes("旅行") || sentences[i].includes("风景")) {
+                    outputText += emojis[Math.floor(Math.random() * 9) + 55] + sentences[i] + "。" + randomEmoji();
+                }
+                else if (sentences[i].includes("美妆") || sentences[i].includes("化妆")) {
+                    outputText += emojis[Math.floor(Math.random() * 6) + 70] + sentences[i] + "。" + randomEmoji();
+                }
+                else if (sentences[i].includes("服饰") || sentences[i].includes("搭配")) {
+                    outputText += emojis[Math.floor(Math.random() * 6) + 76] + sentences[i] + "。" + randomEmoji();
+                }
+                else if (sentences[i].includes("工具") || sentences[i].includes("DIY")) {
+                    outputText += emojis[Math.floor(Math.random() * 6) + 82] + sentences[i] + "。" + randomEmoji();
+                }
+                else if (sentences[i].includes("科技") || sentences[i].includes("数码")) {
+                    outputText += emojis[Math.floor(Math.random() * 9) + 88] + sentences[i] + "。" + randomEmoji();
+                }
+                else if (sentences[i].includes("爱心") || sentences[i].includes("心动")) {
+                    outputText += emojis[Math.floor(Math.random() * 9) + 64] + sentences[i] + "。" + randomEmoji();
+                }
+                else if (sentences[i].includes("彩虹")) {
+                    outputText += "\U0001F308" + sentences[i] + "。" + randomEmoji();
+                }
+                else if (sentences[i].includes("相机") || sentences[i].includes("摄影")) {
+                    outputText += "\U0001F4F7" + sentences[i] + "。" + randomEmoji();
+                }
+                else {
+                    outputText += sentences[i] + "。";
+                }
+            }
+        }
+    }
+    
+    // 将输出文本显示在输出框中
+    outputBox.value = outputText;
+}
+
+        // 定义复制文本的函数
+        function copyText() {
+            // 获取输出文本
+  var outputText = outputBox.value;
+            // 判断输出文本是否为空
+            if (outputText == "") {
+                alert("请先转换格式再复制");
+                return;
+            }
+            // 选中输出框中的文本
+            outputBox.select();
+            // 复制选中的文本
+            document.execCommand("copy");
+            // 提示复制成功
+            alert("已复制到剪贴板");
+        }
+
+        // 给转换按钮添加点击事件监听
+        convertButton.addEventListener("click", convertFormat);
+
+        // 给复制按钮添加点击事件监听
+        copyButton.addEventListener("click", copyText);
+    </script>
+</html>
