@@ -7,9 +7,10 @@
         font-family: Arial, Helvetica, sans-serif;
     }
 
-   .container {
+ .container {
     width: 80%;
     margin: 20px auto; /* 添加上下左右边距 */
+    text-align: center; /* 添加容器水平居中的样式 */
 }
 
 h1 {
@@ -23,7 +24,7 @@ h1 {
     padding: 10px;
     border: 1px solid #ccc;
     resize: none;
-    margin: 0 auto; /* 添加文本框居中的样式 */
+    margin: 0 auto; /* 添加文本框水平居中的样式 */
 }
 
 .button {
@@ -45,8 +46,8 @@ h1 {
     display: block; /* 修改复制按钮为块级元素 */
     width: 100px;
     height: 40px;
-    margin-left: auto; /* 添加复制按钮居中的样式 */
-    margin-right: auto; /* 添加复制按钮居中的样式 */
+    margin-left: auto; /* 添加复制按钮水平居中的样式 */
+    margin-right: auto; /* 添加复制按钮水平居中的样式 */
     background-color: #4caf50;
     color: white;
     border: none;
@@ -61,22 +62,24 @@ h1 {
 @media screen and (max-width: 768px) {
   .container {
       width: 90%; /* 调整容器宽度 */
+      text-align: center; /* 添加容器水平居中的样式 */
   }
   .input-box, .output-box {
       width: 90%; /* 修改文本框宽度为90% */
       height: 150px; /* 修改文本框高度为150px */
       padding: 10px; /* 调整输入输出框内边距 */
-      margin: 0 auto; /* 添加文本框居中的样式 */
+      margin: 0 auto; /* 添加文本框水平居中的样式 */
   }
   h1 {
       font-size: 24px; /* 调整标题字号 */
+      text-align: center; /* 添加标题水平居中的样式 */
   }
   .button, .copy-button {
       width: 80px; /* 调整按钮宽度 */
       height: 30px; /* 调整按钮高度 */
       font-size: 14px; /* 调整按钮字号 */
-      margin-left: auto; /* 添加复制按钮居中的样式 */
-      margin-right: auto; /* 添加复制按钮居中的样式 */
+      margin-left: auto; /* 添加复制按钮水平居中的样式 */
+      margin-right: auto; /* 添加复制按钮水平居中的样式 */
   }
 }
 </style>
