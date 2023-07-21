@@ -132,7 +132,7 @@ function convertFormat() {
     var titlePattern = /^\d+[。，、]/;
     
     // 在每一句话后面添加emoji表情
-    var sentences = inputText.split("。");
+    var sentences = inputText.split("。；");
     for (var i = 0; i < sentences.length; i++) {
         if (sentences[i] != "") {
             // 判断是否是数字序号
