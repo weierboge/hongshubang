@@ -100,21 +100,21 @@ h1 {
         var copyButton = document.getElementById("copy-button");
 
    // 定义emoji表情数组
-var emojis = ["😍 😘 😊 😁 😂 🤣 😆 😅 🥰 🤩 🤪 🤭 🤨 😎 🤑 🤓 🤗 😉 😏 😐 😒 😑
-❤ 💋 💍 💎 💐 🌹 🌺 🌻 🌼
-🧸 👗 👠 💄 👒 👜 🕶
-🧱 🔧 🔨 ⚒︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎ﻻﻻﻻﻻﻻﻻﻻﻻﻻﻻﻻﻻ                <span style="font-size: 20px;">⛏️</span>  <span style="font-size: 20px;">⚙️</span>
-🧮  <span style="font-size: 20px;">💻</span>  <span style="font-size: 20px;">🖥️</span>  <span style="font-size: 20px;">🖱️</span>  <span style="font-size: 20px;">⌨️</span>
-🧭<span style="font-size: 20px;">📱</span>  <span style="font-size: 20px;">☎️</span>  <span style="font-size: 20px;">📞</span>
-🧬<span style="font-size: 20px;">⌚️</span>  <span style="font-size: 20px;">⏰</span>
-🧫<span style="font-size: 20px;">💡</span>
-🧪
-󢜈<span style="font-size: 20px;">🇨🇦</span>  <span style="font-size: 20px;">🇩🇪</span>  <span style="font-size: 20px;">🇪🇬</span>  <span style="font-size: 20px;">🇫🇷</span>  <span style="font-size: 20px;">🇬🇧</span>  <span style="font-size: 20px;">🇨🇳</span>  <span style="font-size: 20px;">🇭🇰</span>  <span style="font-size: 20px;">🇮🇳</span><br><br>󢘄<br>󢘂<br>󢘃<br>󢝄<br>󢚽<br>󢚾<br>󢛳<br>󢜅
+var emojis = ["😍", "😘", "😊", "😁", "😂", "🤣", "😆", "😅", "🥰", "🤩", "🤪", "🤭", "🤨", "😎", "🤑", "🤓", "🤗", "😉", "😏", "😐", "😒", "😑",
+"❤️", "💋", "💍", "💎", "💐", "🌹", "🌺", "🌻", "🌼",
+"🧸", "👗", "👠", "💄", "👒", "👜", "🕶",
+"🧱", "🔧", "🔨", "⚒️","⛏️","⚙️",
+"🧮","💻","🖥️","🖱️","⌨️",
+"🧭","📱","☎️","📞",
+"🧬","⌚️","⏰",
+"🧫","💡",
+"🧪",
+"🇨🇦","🇩🇪","🇪🇬","🇫🇷","🇬🇧","🇨🇳","🇭🇰","🇮🇳",
 "📷","🎥","📹","📺"];
-        // 定义随机获取emoji表情的函数
-        function randomEmoji() {
-            var index = Math.floor(Math.random() * emojis.length);
-            return emojis[index];
+// 定义随机获取emoji表情的函数
+function randomEmoji() {
+    var index = Math.floor(Math.random() * emojis.length);
+    return emojis[index];
         }
 
        // 定义转换格式的函数
