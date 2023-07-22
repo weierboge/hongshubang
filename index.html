@@ -167,36 +167,135 @@ outputText += "\n" + emojis[parseInt(number) - 1] + sentences[i] + "。" + rando
                             var title = sentences[i].match(titlePattern)[0];
                             outputText += emojis[Math.floor(Math.random() * 10) + 35] + title + "。" + randomEmoji();
                         }
-           // 其他情况
+          // 其他情况
 else {
+  // 定义一个对象来存储每个关键词的次数
+var keywordCount = {
+    "旅行": 0,
+    "风景": 0,
+    "美妆": 0,
+    "化妆": 0,
+    "服饰": 0,
+    "搭配": 0,
+    "工具": 0,
+    "DIY": 0,
+    "科技": 0,
+    "数码": 0,
+    "爱心": 0,
+    "心动": 0,
+    "彩虹": 0,
+    "相机": 0,
+    "摄影": 0
+};
+
     // 根据段落和文字含义适当添加表情
-    // 使用正则表达式来匹配关键词
-    if (/\b旅行\b/.test(sentences[i]) || /\b风景\b/.test(sentences[i])) {
-        outputText += emojis[Math.floor(Math.random() * 9) + 55] + sentences[i]  + randomEmoji();
+    // 使用正则表达式来匹配关键词，添加点号和星号来表示任意字符和重复
+    if (/.*\b旅行\b.*/.test(sentences[i]) || /.*\b风景\b.*/.test(sentences[i])) {
+        // 判断关键词的次数是否小于4
+        if (keywordCount["旅行"] < 4 || keywordCount["风景"] < 4) {
+            outputText += emojis[Math.floor(Math.random() * 9) + 55] + sentences[i]  + randomEmoji();
+            // 将关键词的次数加一
+            keywordCount["旅行"]++;
+            keywordCount["风景"]++;
+        }
+        else {
+            outputText += sentences[i];
+        }
+        
     }
-    else if (/\b美妆\b/.test(sentences[i]) || /\b化妆\b/.test(sentences[i])) {
-        outputText += emojis[Math.floor(Math.random() * 6) + 70] + sentences[i] + randomEmoji();
+    else if (/.*\b美妆\b.*/.test(sentences[i]) || /.*\b化妆\b.*/.test(sentences[i])) {
+        // 判断关键词的次数是否小于4
+        if (keywordCount["美妆"] < 4 || keywordCount["化妆"] < 4) {
+            outputText += emojis[Math.floor(Math.random() * 6) + 70] + sentences[i] + randomEmoji();
+            // 将关键词的次数加一
+            keywordCount["美妆"]++;
+            keywordCount["化妆"]++;
+        }
+        else {
+            outputText += sentences[i];
+        }
+        
     }
-    else if (/\b服饰\b/.test(sentences[i]) || /\b搭配\b/.test(sentences[i])) {
-        outputText += emojis[Math.floor(Math.random() * 6) + 76] + sentences[i]  + randomEmoji();
+    else if (/.*\b服饰\b.*/.test(sentences[i]) || /.*\b搭配\b.*/.test(sentences[i])) {
+        // 判断关键词的次数是否小于4
+        if (keywordCount["服饰"] < 4 || keywordCount["搭配"] < 4) {
+            outputText += emojis[Math.floor(Math.random() * 6) + 76] + sentences[i]  + randomEmoji();
+            // 将关键词的次数加一
+            keywordCount["服饰"]++;
+            keywordCount["搭配"]++;
+        }
+        else {
+            outputText += sentences[i];
+        }
+        
     }
-    else if (/\b工具\b/.test(sentences[i]) || /\bDIY\b/.test(sentences[i])) {
-        outputText += emojis[Math.floor(Math.random() * 6) + 82] + sentences[i]  + randomEmoji();
+    else if (/.*\b工具\b.*/.test(sentences[i]) || /.*\bDIY\b.*/.test(sentences[i])) {
+        // 判断关键词的次数是否小于4
+        if (keywordCount["工具"] < 4 || keywordCount["DIY"] < 4) {
+            outputText += emojis[Math.floor(Math.random() * 6) + 82] + sentences[i]  + randomEmoji();
+            // 将关键词的次数加一
+            keywordCount["工具"]++;
+            keywordCount["DIY"]++;
+        }
+        else {
+            outputText += sentences[i];
+        }
+        
     }
-    else if (/\b科技\b/.test(sentences[i]) || /\b数码\b/.test(sentences[i])) {
-        outputText += emojis[Math.floor(Math.random() * 9) + 88] + sentences[i] + randomEmoji();
+    else if (/.*\b科技\b.*/.test(sentences[i]) || /.*\b数码\b.*/.test(sentences[i])) {
+        // 判断关键词的次数是否小于4
+        if (keywordCount["科技"] < 4 || keywordCount["数码"] < 4) {
+            outputText += emojis[Math.floor(Math.random() * 9) + 88] + sentences[i] + randomEmoji();
+            // 将关键词的次数加一
+            keywordCount["科技"]++;
+            keywordCount["数码"]++;
+        }
+        else {
+            outputText += sentences[i];
+        }
+        
     }
-    else if (/\b爱心\b/.test(sentences[i]) || /\b心动\b/.test(sentences[i])) {
-        outputText += emojis[Math.floor(Math.random() * 9) + 64] + sentences[i] + randomEmoji();
+    else if (/.*\b爱心\b.*/.test(sentences[i]) || /.*\b心动\b.*/.test(sentences[i])) {
+        // 判断关键词的次数是否小于4
+        if (keywordCount["爱心"] < 4 || keywordCount["心动"] < 4) {
+            outputText += emojis[Math.floor(Math.random() * 9) + 64] + sentences[i] + randomEmoji();
+            // 将关键词的次数加一
+            keywordCount["爱心"]++;
+            keywordCount["心动"]++;
+        }
+        else {
+            outputText += sentences[i];
+        }
+        
     }
-    else if (/\b彩虹\b/.test(sentences[i])) {
-        outputText += "\U0001F308" + sentences[i] +randomEmoji();
+    else if (/.*\b彩虹\b.*/.test(sentences[i])) {
+        // 判断关键词的次数是否小于4
+        if (keywordCount["彩虹"] < 4) {
+            outputText += "\U0001F308" + sentences[i] +randomEmoji();
+            // 将关键词的次数加一
+            keywordCount["彩虹"]++;
+        }
+        else {
+            outputText += sentences[i];
+        }
+        
     }
-    else if (/\b相机\b/.test(sentences[i]) || /\b摄影\b/.test(sentences[i])) {
-        outputText += "📷" + sentences[i] + randomEmoji();
+    else if (/.*\b相机\b.*/.test(sentences[i]) || /.*\b摄影\b.*/.test(sentences[i])) {
+        // 判断关键词的次数是否小于4
+        if (keywordCount["相机"] < 4 || keywordCount["摄影"] < 4) {
+            outputText += "📷" + sentences[i] + randomEmoji();
+            // 将关键词的次数加一
+            keywordCount["相机"]++;
+            keywordCount["摄影"]++;
+        }
+        else {
+            outputText += sentences[i];
+        }
+        
     }
     else {
         outputText += sentences[i] + randomEmoji();
+
                             }
                         }
                     }
