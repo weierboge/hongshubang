@@ -1,2 +1,5 @@
 # 小红书模板文本在线转换工具
-直接访问：https://weierboge.github.io/xiaohongshugeshi/
+
+一键把你的文案转换为带有emoji的小红书文案格式
+
+点击直接访问：[小红书模板文本在线转换工具](https://hongshubang.com)
