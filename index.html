@@ -145,10 +145,9 @@ var emojis = [ "😊", "😘","😁", "😂", "🤣", "😆", "😅", "🥰", "�
                 var outputText = "";
                 
                 // 定义数字序号的正则表达式
-                var numberPattern = /^\d+\./;
+                var numberPattern = /^\d+\.、，/;
                 // 定义小标题的正则表达式
                 var titlePattern = /^\d+[。，、]\s*[。]/;
-                
                 // 使用正则表达式来分割句子，保留表情符号不被分割
                 var sentences = inputText.split(/(?<=。)/);
                 
@@ -191,8 +190,8 @@ var keywordCount = {
     // 根据段落和文字含义适当添加表情
     // 使用正则表达式来匹配关键词，添加点号和星号来表示任意字符和重复
     if (/.*\b旅行\b.*/.test(sentences[i]) || /.*\b风景\b.*/.test(sentences[i])) {
-        // 判断关键词的次数是否小于4
-        if (keywordCount["旅行"] < 4 || keywordCount["风景"] < 4) {
+        // 判断关键词的次数是否小于5
+        if (keywordCount["旅行"] < 5 || keywordCount["风景"] < 5) {
             outputText += emojis[Math.floor(Math.random() * 9) + 55] + sentences[i]  + randomEmoji();
             // 将关键词的次数加一
             keywordCount["旅行"]++;
@@ -204,8 +203,8 @@ var keywordCount = {
         
     }
     else if (/.*\b美妆\b.*/.test(sentences[i]) || /.*\b化妆\b.*/.test(sentences[i])) {
-        // 判断关键词的次数是否小于4
-        if (keywordCount["美妆"] < 4 || keywordCount["化妆"] < 4) {
+        // 判断关键词的次数是否小于5
+        if (keywordCount["美妆"] < 5 || keywordCount["化妆"] < 5) {
             outputText += emojis[Math.floor(Math.random() * 6) + 70] + sentences[i] + randomEmoji();
             // 将关键词的次数加一
             keywordCount["美妆"]++;
@@ -217,8 +216,8 @@ var keywordCount = {
         
     }
     else if (/.*\b服饰\b.*/.test(sentences[i]) || /.*\b搭配\b.*/.test(sentences[i])) {
-        // 判断关键词的次数是否小于4
-        if (keywordCount["服饰"] < 4 || keywordCount["搭配"] < 4) {
+        // 判断关键词的次数是否小于5
+        if (keywordCount["服饰"] < 5 || keywordCount["搭配"] < 5) {
             outputText += emojis[Math.floor(Math.random() * 6) + 76] + sentences[i]  + randomEmoji();
             // 将关键词的次数加一
             keywordCount["服饰"]++;
@@ -230,8 +229,8 @@ var keywordCount = {
         
     }
     else if (/.*\b工具\b.*/.test(sentences[i]) || /.*\bDIY\b.*/.test(sentences[i])) {
-        // 判断关键词的次数是否小于4
-        if (keywordCount["工具"] < 4 || keywordCount["DIY"] < 4) {
+        // 判断关键词的次数是否小于5
+        if (keywordCount["工具"] < 5 || keywordCount["DIY"] < 5) {
             outputText += emojis[Math.floor(Math.random() * 6) + 82] + sentences[i]  + randomEmoji();
             // 将关键词的次数加一
             keywordCount["工具"]++;
@@ -243,8 +242,8 @@ var keywordCount = {
         
     }
     else if (/.*\b科技\b.*/.test(sentences[i]) || /.*\b数码\b.*/.test(sentences[i])) {
-        // 判断关键词的次数是否小于4
-        if (keywordCount["科技"] < 4 || keywordCount["数码"] < 4) {
+        // 判断关键词的次数是否小于5
+        if (keywordCount["科技"] < 5 || keywordCount["数码"] < 5) {
             outputText += emojis[Math.floor(Math.random() * 9) + 88] + sentences[i] + randomEmoji();
             // 将关键词的次数加一
             keywordCount["科技"]++;
@@ -256,8 +255,8 @@ var keywordCount = {
         
     }
     else if (/.*\b爱心\b.*/.test(sentences[i]) || /.*\b心动\b.*/.test(sentences[i])) {
-        // 判断关键词的次数是否小于4
-        if (keywordCount["爱心"] < 4 || keywordCount["心动"] < 4) {
+        // 判断关键词的次数是否小于5
+        if (keywordCount["爱心"] < 5 || keywordCount["心动"] < 5) {
             outputText += emojis[Math.floor(Math.random() * 9) + 64] + sentences[i] + randomEmoji();
             // 将关键词的次数加一
             keywordCount["爱心"]++;
@@ -269,8 +268,8 @@ var keywordCount = {
         
     }
     else if (/.*\b彩虹\b.*/.test(sentences[i])) {
-        // 判断关键词的次数是否小于4
-        if (keywordCount["彩虹"] < 4) {
+        // 判断关键词的次数是否小于5
+        if (keywordCount["彩虹"] < 5) {
             outputText += "\U0001F308" + sentences[i] +randomEmoji();
             // 将关键词的次数加一
             keywordCount["彩虹"]++;
@@ -281,8 +280,8 @@ var keywordCount = {
         
     }
     else if (/.*\b相机\b.*/.test(sentences[i]) || /.*\b摄影\b.*/.test(sentences[i])) {
-        // 判断关键词的次数是否小于4
-        if (keywordCount["相机"] < 4 || keywordCount["摄影"] < 4) {
+        // 判断关键词的次数是否小于5
+        if (keywordCount["相机"] < 5 || keywordCount["摄影"] < 5) {
             outputText += "📷" + sentences[i] + randomEmoji();
             // 将关键词的次数加一
             keywordCount["相机"]++;
