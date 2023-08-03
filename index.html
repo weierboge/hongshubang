@@ -92,6 +92,11 @@ h1 {
       margin-right: auto; /* 添加复制按钮水平居中的样式 */
   }
 }
+        .center {
+            text-align: center; /* 设置文本居中 */
+            margin: 0 auto; /* 设置水平居中 */
+        } 
+     
 </style>
 </head>
 <body>
@@ -337,5 +342,9 @@ var keywordCount = {
             // 给复制按钮添加点击事件监听
             copyButton.addEventListener("click", copyText);
         </script>
+  <div id="donate" class="center">
+  <p>如果您喜欢我的网站，欢迎给我捐赠打赏，感谢您的支持！</p>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9CAYAAACPgGwlAAAAAXNSR0IArs4c6QAABkNJREFUeF7t3cuW2zgMBFD3/390z0myG1PxZRcs2U5lG4gg6wFClOT+ut1u37cX+ff9fT+Vr6+vu9mt4lZLWF27ipvOm8zlDCp+IVrSh8VW0jekO+24On0Nfp3+q9TV6RvWHA6dBr9O33C6NkoJ51c1aMmcda+eFm8y5xXOy/Je0h1mFa/GeWaLLOmG01aUkqlxW8khuKQDSLshSqbG7eZ/FF/SHyH0g/9XMjXuB1P46yUR6doJv9KJlzZUyZyTa5P5JXm5kSvpt5tioGRqnLpfxyvpB4gqgInjkhxJ3pJe0v8gcJUCk/MBbZSmS3TiuKtw/hin676XkH7GiZzOLxFbSd8o7yVdrbWxXSTlXaejTtK5JNtKy/uBOJRMjSvpt1vLe8v7e3Tv0yVVq0T39A2kdO+6ah/dWMpd6LQAdfv557r3aaBL+ka3rWDV6etze8VlGue3bOTq9LUMVERMuqpN45S46fF0z9T+Ynp+Op7GRc/TNYnGlfT1Mw7FT+NK+i17Jq5AJ7d2SQ7N2/IeHs4oSdOVLclb0ku66uc5cdp9fkrcc1B8POrHfMum5fOV4h7T85yIkr5xGDVdYZ5D6eNRS3pJf6ySZ0ZMO+nVx3smln8b++t7+uhpeCXJHryayhlCGIZgfLiSfnBgk4hjnKXhAUt6SR+W1MBwLe8DIP5viDr9X3S6/qSY7nHTzZM+REj8oGs7Iy5Zh2LF9+m64JLun4WdcePEj1YT4pJrFQR9EUJdo4I+I07nrHEl/QCpM8jUhlTJ1LiSXtJ/IxDt6do4aNlO1Ks5Xn1rUAw0blnFku69pGdN27QAuZ8q6eqZddx0P5DN5v7qOn3jxUgFv6RvnG4pqNNbyHRJfUvSV49WE2AUBCV9ukF7x/GS273lLVtJX8tPhX+GiEr6QYl4JZJ0S+Jue/jv2CyfsimAyaRb3ufvBlRsJf0NKscp5V0Vkzh9ei/UuWiFUQx0Hcl4SeVd5tUXIzWxdu8KluYt6S5nfnNGwS/pG+Bjg6bYa+aSrkg94eBJ9+qSvkGSbiE6pJI0Pd7HkK7AnLFdJOJQIWic4qJxfCKnnaY2T4lSS7rS6yeLl+3pupSSrkiV9EOkpsusjqdxGcX3V7e8v1gHnvQSKg5+MVIno3u1jpcsRLeBM/oQzaG9k+Kn1ST6oaGSrjL134xT4hLBlPSNX6Jwiu8jp91a0kPikq1BhVDSFamDOC2Byfaj1+pSXp70pBHRsqNgXTUXdb/G6TqmxbbkY/q995Ke/f5sST8oB1oqEwGqgzWuTk9qe/invNRJSqbGlfSS/huBRDAJhHyffpVDtJQn84sAXLz9krg6EYJeW9ITxje+jVNCNC4RVkkv6X8QOENtmqPlff4WsE6v04+dftU97xl5k/0x1AxdrlWR17E6kTujpOr5eUl/wnZb0tdmS9xF9t0ISuayvLakl/TD7v2MMnvVtsJ7IR7EbJiYQsedrh8w0uyeEKQnbUqcijcRoF6bzEVxWQqmpPufuU5IUj9og1vSDxBVxynQJV2lG8apolveNxrSlvd/sLzr61KhYeny6XKsZVvjkvKuOTSOAD14Csi/Aq1JkriSnlUdFWVJD79vU2dOx6m5+Fs2HXA6rk6v0w81Ne0aHU/Lp56gJXFqOHa6Ok4TJ2BN50jG02sT/E4RYPLARUEo6Y5USXeslpHJwU6Suk4/QC9RtBJS0g9ewGh5Vwl53Mc4PXFN0qVqXgVaK4zmdSn8PFLXphnG34ZdJS7pSsc6rqQf4KfA1OkHf4FRnan61fE0TqtJcqvY8r7xzZYSMu24Ol0t+KZOn64IiaunxebU3UfqOt6ykSvpa2mU9I2GT8HSrSvpJer0jWfdSlxSJUr6hiQV6Ok4JUkFo+PV6Rvfu083RUqmim1D53ehydqSvEsB6tm7Aqhu0Fu2xDU655K+4UxVoIKauEFzJKLU9WoOFXSSt04/qaMv6RuVo07335dJ3M+HM0kSLWNJiU7clcwvweWqnqOkH7CWNJoqhJK+sQ0oqLpd1OnhD+4qIeokdUPLuyK/8ZTNh7TIku5N23Sv8/Lfsqk4TGr+2ZDm1Up01VbDX7gogNNxqugzACzp0+yGhyQlPfs7by3vG3cNWoleqalseQ+fz38K6f8Bo6WhH7zocIoAAAAASUVORK5CYII=" alt="捐赠打赏二维码" width="200" height="200">
+    </div>
     </body>
 </html>
